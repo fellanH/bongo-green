@@ -1,0 +1,15 @@
+---
+description: Rules for AI Agents
+alwaysApply: true
+---
+
+- Refer to relevant documentation files when needed
+- Product Description ´docs/product-description.md´ 
+- Product Requirements ´docs/prd.md´ 
+- Architecture ´architecture.md´ 
+- Front End Specification ´front-end-spec.md´
+- Coding Standards ´docs/architecture/coding-standards.md´
+- Tech Stack ´docs/architecture/tech-stack.md´
+- Keep docs updated when needed
+- Git branch from ´dev´ before first starting the first task
+- When task/tasks are done run tests Git merge get user approval then merge to ´dev´

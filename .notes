@@ -1,0 +1,5 @@
+Meta Prompt for ´ASK mode´ Analysis of agent run:
+
+Ignore agent rules, this is a meta discussion about the previous agent dialog, let's review what happened, how well did the agent understand the user promt, what was the end result, did it align with user goals, what information could have been provided by the user in the initial prompt to make things easier for the agent.
+
+How could this information have been added to the documentation and rules to avoid these issues?

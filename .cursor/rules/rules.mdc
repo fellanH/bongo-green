@@ -14,3 +14,14 @@ alwaysApply: true
 - Keep docs updated when needed
 - Git branch from `dev` before first starting the first task
 - When task/tasks are done run tests Git merge get user approval then merge to `dev`
+ 
+## Automation Run‑Book Cues
+
+- Use absolute paths for file operations and commands.
+- Use the exact bootstrap commands from `docs/architecture/source-tree.md`.
+- Update `docs/architecture/source-tree.md` after scaffolding to reflect any changes.
+- Do not prompt; pass non‑interactive flags and choose `--no-turbopack` by default.
+- Commit on `dev` with a single, well‑scoped conventional message.
+ - Ensure remote `dev` exists; create and push if missing.
+ - Verify clean working tree before creating PRs.
+ - Use GitHub CLI to open PRs non‑interactively: `gh pr create --base dev --head <branch>`.

@@ -1,3 +1,70 @@
+# Source Tree and Bootstrapping
+
+> App Location & Tooling Defaults
+>
+> - App lives in `web/` (do not scaffold at repo root)
+> - Package manager: pnpm 10.x
+> - Node: 20.x (pin via `.nvmrc`)
+> - Dev server: disable Turbopack by default
+> - Import alias: `@/*`
+> - Tailwind: v4
+> - shadcn/ui: registry defaults
+
+## Non‑interactive bootstrap
+
+Use the following exact commands to scaffold the app non‑interactively. Run from the repository root.
+
+```bash
+# Bootstrap (non-interactive)
+pnpm dlx create-next-app@latest web \
+  --yes --typescript --app --src-dir --eslint --tailwind \
+  --import-alias "@/*" --no-turbopack
+
+cd web
+pnpm dlx shadcn@latest init -y --defaults
+pnpm dlx shadcn@latest add button input label form
+pnpm lint && pnpm build
+```
+
+## Prerequisites
+
+```bash
+nvm use
+node -v   # v20.12.2
+pnpm -v   # 10.x
+gh --version && gh auth status   # for PR automation
+```
+
+## Project structure (high level)
+
+```
+repo-root/
+  ├─ web/                  # Next.js application (App Router)
+  │  ├─ src/
+  │  ├─ app/
+  │  └─ ...
+  ├─ docs/
+  ├─ .nvmrc                # Node 20.x pin
+  ├─ .env.example          # Template; not required for Story 1.1
+  └─ README.md
+```
+
+## Notes
+
+- Prefer `pnpm` commands; do not mix npm/yarn.
+- Use non‑interactive flags for all CLIs to avoid prompts.
+- Import using `@/*` alias.
+
+Environment templates:
+- `.env.example` must exist at repo root; ensure it is not ignored by tooling/editor rules.
+
+### Optional monorepo/workspaces
+
+If we adopt a workspace layout later:
+
+- Add `pnpm-workspace.yaml` at repo root including the `web` package.
+- Keep a minimal root `package.json` for shared scripts/tools.
+
 # Source Tree
 
 **Important** Update this document if new folders are added

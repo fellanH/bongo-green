@@ -3,6 +3,7 @@ description: Rules for AI Agents
 alwaysApply: true
 ---
 
+*IMPORTANT* notify the user when acting based on the below rules.
 - Refer to relevant documentation files when needed
 - Product Description `docs/product-description.md`
 - Product Requirements `docs/prd.md` 

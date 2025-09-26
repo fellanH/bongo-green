@@ -24,10 +24,10 @@ Establish the complete groundwork for the application with Supabase authenticati
 As a developer, I want to initialize the Next.js project with TypeScript and shadcn, so that we have a clean, standardized foundation to build upon.
 
 Acceptance Criteria:
-1. Next.js project exists using latest stable version with TypeScript configured.
-2. `shadcn/ui` initialized and usable in the project.
-3. Project builds and runs locally with no lint errors.
-4. Code committed to a new Git repository.
+1. App must be scaffolded in `web/` using `pnpm` (non‑interactive CLI flags, `--no-turbopack`).
+2. `shadcn/ui` installed with base components: `button`, `input`, `label`, `form`.
+3. Lint and build must pass on Node 20.x (`.nvmrc` present).
+4. Code committed following conventional commits on a branch from `dev`.
 
 ### Story 1.2: Supabase Integration
 As a developer, I want to connect the Next.js application to our Supabase project, so that we can leverage its database and authentication services.

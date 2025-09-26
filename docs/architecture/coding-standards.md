@@ -32,8 +32,10 @@ This document establishes the coding standards and development conventions for t
 
 > **📋 Complete Workflow:** See [Development Workflow](./13-development-workflow.md) for detailed setup and processes.
 
-* **Package Manager:** Use `pnpm` for all package management
-* **Branching:** Gitflow-like model with `main`, `dev`, and `feature/*` branches
+* **Package Manager:** Use `pnpm` for all package management (do not mix npm/yarn)
+* **CLI Interaction:** Prefer non‑interactive flags for all CLIs
+* **Branching:** Default branch is `dev`; feature branches `feat/*`
+* **Commit Style:** Conventional commits (e.g., `feat(web): ...`)
 * **Database:** Use `pnpm prisma generate` and `pnpm prisma db push` for schema changes
 
 ## Testing Standards

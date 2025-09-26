@@ -5,7 +5,7 @@
 | Category | Technology | Version | Purpose | Rationale |
 | :--- | :--- | :- | :--- | :--- |
 | **Frontend Language** | TypeScript | latest | Adds static typing to JS | Enforces type safety, improves code quality and maintainability. |
-| **Frontend Framework**| Next.js | latest | Full-stack React framework | Provides SSR, API routes, and a seamless developer experience. |
+| **Frontend Framework**| Next.js | 15.x | Full-stack React framework | Provides SSR, API routes, and a seamless developer experience. Minor bumps allowed. |
 | **UI Component Lib** | shadcn/ui | latest | Composable component library | Accelerates UI development with accessible, production-ready components. |
 | **State Management** | Zustand | latest | Lightweight state management | Simple, scalable, and avoids the boilerplate of more complex solutions. |
 | **Backend Language** | TypeScript | latest | Adds static typing to JS | Consistent language across the stack simplifies development. |
@@ -22,6 +22,14 @@
 | **CI/CD** | Vercel | N/A | Continuous Deployment | Native Git integration for automatic builds and deployments. |
 | **Monitoring** | Vercel Analytics | N/A | Performance & usage metrics| Simple, privacy-first analytics integrated into our host. |
 | **Logging** | **Pino** | **latest** | **Structured Logging** | **High-performance library for creating searchable JSON logs.** |
-| **CSS Framework** | Tailwind CSS | latest | Utility-first CSS | Required by shadcn/ui and excellent for rapid, custom styling. |
+| **CSS Framework** | Tailwind CSS | 4.x | Utility-first CSS | Required by shadcn/ui and excellent for rapid, custom styling. |
 
 -----
+## Version Pinning and Policy
+
+- Node: 20.x (pinned via `.nvmrc`)
+- pnpm: 10.x
+- Next.js: 15.x (minor bumps allowed)
+- Tailwind: 4.x
+- ESLint: Flat config using Next.js preset
+- Policy: Use non‑interactive flags for all CLIs.

@@ -1,3 +1,25 @@
+# Development Workflow
+
+## Project Initialization Checklist
+
+1. Create branch from `dev`.
+2. Run the bootstrap commands from `docs/architecture/source-tree.md`.
+3. Update `docs/architecture/source-tree.md` if structure or defaults change.
+4. Verify lint and build pass: `pnpm lint && pnpm build` (from `web/`).
+5. Commit with a conventional message.
+6. Optional: set `origin` and push the branch.
+
+## Git Conventions
+
+- Branching: base work from `dev`; feature branches use `feat/*`, fixes `fix/*`.
+- Commit style: Conventional Commits, e.g., `feat(web): initialize Next.js app with shadcn`.
+- PR requirements: concise description, link relevant story, passing lint/build checks.
+
+## CLI Usage Policy
+
+- Use `pnpm` for all package management commands.
+- Prefer non‑interactive CLI flags for repeatability (e.g., `--yes`, `--no-turbopack`).
+
 # 13\. Development Workflow
 
 > **📋 Coding Standards:** For automated enforcement with ESLint, Prettier, and Husky, see the [Coding Standards](./coding-standards.md) document.

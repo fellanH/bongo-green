@@ -26,6 +26,15 @@ pnpm dlx shadcn@latest add button input label form
 pnpm lint && pnpm build
 ```
 
+## Prerequisites
+
+```bash
+nvm use
+node -v   # v20.12.2
+pnpm -v   # 10.x
+gh --version && gh auth status   # for PR automation
+```
+
 ## Project structure (high level)
 
 ```
@@ -45,6 +54,9 @@ repo-root/
 - Prefer `pnpm` commands; do not mix npm/yarn.
 - Use non‑interactive flags for all CLIs to avoid prompts.
 - Import using `@/*` alias.
+
+Environment templates:
+- `.env.example` must exist at repo root; ensure it is not ignored by tooling/editor rules.
 
 ### Optional monorepo/workspaces
 

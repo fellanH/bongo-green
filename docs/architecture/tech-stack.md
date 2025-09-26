@@ -33,3 +33,7 @@
 - Tailwind: 4.x
 - ESLint: Flat config using Next.js preset
 - Policy: Use non‑interactive flags for all CLIs.
+
+## Tooling Requirements
+
+- GitHub CLI: 2.63.x (required for non‑interactive PR creation)

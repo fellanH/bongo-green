@@ -2,7 +2,8 @@
 
 ## Project Initialization Checklist
 
-1. Create branch from `dev`.
+1. Ensure remote `dev` exists; create if missing (see Base Branch section).
+2. Create branch from `dev`.
 2. Run the bootstrap commands from `docs/architecture/source-tree.md`.
 3. Update `docs/architecture/source-tree.md` if structure or defaults change.
 4. Verify lint and build pass: `pnpm lint && pnpm build` (from `web/`).
@@ -19,6 +20,50 @@
 
 - Use `pnpm` for all package management commands.
 - Prefer non‑interactive CLI flags for repeatability (e.g., `--yes`, `--no-turbopack`).
+
+## Base Branch and Remotes
+
+- Base branch for PRs: `dev`.
+- Ensure remote and base branch exist:
+```bash
+git fetch --all --prune
+git remote -v | grep origin || git remote add origin <repo-url>
+git ls-remote --exit-code origin dev || git push origin HEAD:dev
+```
+
+## Clean Working Tree Check
+
+PRs must be created from a clean tree:
+```bash
+test -z "$(git status --porcelain)" || (echo "Commit or stash changes first" && exit 1)
+```
+
+## Non-interactive PR Creation (GitHub CLI)
+
+Prereq (documented in tech stack): GitHub CLI installed and authenticated.
+```bash
+gh --version
+gh auth status || gh auth login --hostname github.com --web
+
+# Create PR against dev
+gh pr create --base dev --head <branch> \
+  --title "<conventional title>" \
+  --body "<bulleted changes>" \
+  --draft=false --web=false
+
+# Optional: reviewers and labels
+gh pr edit --add-reviewer team/reviewers --add-label docs --add-label architecture
+```
+
+## Commit and Merge Hygiene
+
+- Prefer one well-scoped conventional commit per PR.
+- Use fixup/squash locally to keep history clean:
+```bash
+git commit --fixup=<sha>
+git rebase -i --autosquash dev
+```
+- Merge method: Squash and merge.
 
 # 13\. Development Workflow
 

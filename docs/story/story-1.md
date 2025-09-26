@@ -29,6 +29,10 @@ Acceptance Criteria:
 3. Lint and build must pass on Node 20.x (`.nvmrc` present).
 4. Code committed following conventional commits on a branch from `dev`.
 
+Notes:
+- PR must target `dev`.
+- CI should validate Node 20.x and pnpm 10.x; lint/build must pass.
+
 ### Story 1.2: Supabase Integration
 As a developer, I want to connect the Next.js application to our Supabase project, so that we can leverage its database and authentication services.
 

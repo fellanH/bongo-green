@@ -36,6 +36,7 @@ This document establishes the coding standards and development conventions for t
 * **CLI Interaction:** Prefer non‑interactive flags for all CLIs
 * **Branching:** Default branch is `dev`; feature branches `feat/*`
 * **Commit Style:** Conventional commits (e.g., `feat(web): ...`)
+* **Commit/Merge Hygiene:** Prefer one well‑scoped commit per PR; use `git commit --fixup` and `git rebase -i --autosquash` to squash locally; use Squash & Merge
 * **Database:** Use `pnpm prisma generate` and `pnpm prisma db push` for schema changes
 
 ## Testing Standards
